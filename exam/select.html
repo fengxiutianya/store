@@ -1,0 +1,95 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.css" />
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/avalon.js/1.5.5/avalon.min.js"></script>
+</head>
+    <style>
+        .m{
+            margin-top: 10px;
+        }
+        .back{
+            display: block;
+            font-size: 40px;
+            margin: 20px;
+
+        }
+        .back:focus{
+            outline: none;
+            text-decoration: none;
+        }
+    </style>
+
+<body  ms-controller="course">
+<a class="glyphicon glyphicon-circle-arrow-left back" href="<%=url%>view/student/main.jsp"></a>
+<div class="row m">
+    <div class="col-md-1 col-md-offset-3">课程名</div>
+    <div class="col-md-1">任课老师</div>
+    <div class="col-md-1">开始时间</div>
+    <div class="col-md-1">结束时间</div>
+    <div class="col-md-1">操作</div>
+</div>
+<div class="row m" ms-repeat="array.data">
+    <div class="col-md-1 col-md-offset-3">{{el.name}}</div>
+    <div class="col-md-1">{{el.teacherName}}</div>
+    <div class="col-md-1">{{el.startTime}}</div>
+    <div class="col-md-1">{{el.endTime}}</div>
+    <button ms-click="sub(el.id)">删除</button>
+</div>
+</body>
+<script type="text/javascript">
+
+    var vm = avalon.define({
+        $id: "course",
+        sex: "man",
+        array: {},
+        lang: [],
+        sub:function(el){
+      		$.ajax({
+	        type: "POST",
+	        dataType:"json",
+	        url: "http://localhost:8080/practice/student/deleteCourse.action",
+	        data:{
+	        	course_id:el
+	        },
+	        success: function(data){
+	            if(data.success){
+	              alert(data.msg)
+	                 var i = 0;
+	             	 for(var key in vm.array.data){  
+	              		if(vm.array.data[key].id == el){
+	              			vm.array.data.removeAt(i)
+							break;
+    					}
+	              		i++;
+    					
+				  }  
+	            }else{
+	                alert(data.msg);
+	            }
+			}
+    	 }); 
+        },
+        langtext: "javascript,ruby"
+    });
+    $(function(){
+    	$.ajax({
+	        type: "POST",
+	        dataType:"json",
+	        url: "http://localhost:8080/practice/student/getSelectCourse.action",
+	        data:{},
+	        success: function(data){
+	            if(data.success){
+	              vm.array = {
+	              	data:data.data
+	              }
+	            }else{
+	                alert(data.msg);
+	            }
+			}
+    	 }); 
+    });
+</script>

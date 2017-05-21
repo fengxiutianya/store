@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	</head>
+		<style>
+			.back{
+				display: block;
+				font-size: 40px;
+				margin: 20px;
+				
+			}
+		 
+		</style>
+	<body class="container-fluid">
+		<a class="glyphicon glyphicon-circle-arrow-left back"></a>
+		
+		<div class="form-horizontal" style="margin-top: 100px;">
+			<div class="form-group">
+				<label for="inputEmail3" class="col-md-2 control-label">用户名</label>
+				<div class="col-sm-10">
+					 <p class="form-control-static">张克</p>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="inputPassword3" class="col-md-2 control-label">原始密码</label>
+				<div class="col-md-3">
+					<input type="password" class="form-control" id="log" placeholder="Password" value=""/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="inputPassword3" class="col-md-2 control-label">新密码</label>
+				<div class="col-md-3">
+					<input type="password" class="form-control" id="pwd" placeholder="Password" value=""/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="inputPassword3" class="col-md-2 control-label">重复密码</label>
+				<div class="col-md-3">
+					<input type="password" class="form-control" id="rpwd" placeholder="Password" value=""/>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="button" id="sub" class="btn btn-default">确认修改</button>
+				</div>
+			</div>
+		</form>
+	</body>
+
+</html>
+<script type="text/javascript">
+	$(document).ready(function($) {
+
+          $("#sub").click(function(){
+               
+               
+               if($("#log").val().length == 0){
+                   alert("密码不能为空");
+                   return;
+               }
+              
+              
+               console.log($("#pwd").val())
+               console.log($.trim($("#pwd").val()).length) 
+               console.log($.trim($("#rpwd").val()).length)
+               console.log( $.trim($("#pwd").val()) !=  $.trim($("#rpwd").val()))
+              if($("#pwd").val().length == 0 || ($("#pwd").val() != $("#rpwd").val())){
+                  alert("俩次密码不一致")
+                  return;
+              }
+                $.ajax({
+//                  url: seajs.data.vars.base_url + "teacher/updateUser.action",
+                    type: 'POST',
+                    dataType: 'json',
+                    data:{
+                        op:$("#log").val(),
+                        np:$("#pwd").val(),
+
+                    },
+                    success : function(data){
+                        if(data.success)
+                            alert(data.msg);
+                        else
+                            alert(data.msg);
+
+                    },
+                    error:function(){
+                        alert("网络错误")
+
+                    }
+                });
+            });
+         });
+</script>
+ 

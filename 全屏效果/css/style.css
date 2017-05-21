@@ -1,0 +1,53 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+body{
+	font-family: "微软雅黑"  "arial black";
+}
+h1{
+	font-size:6em ;
+	font-weight: normal;
+}
+
+html,body{
+	height: 100%;
+	overflow: hidden;
+}
+
+p{
+	font-size: 2em;
+	margin: 0.5em 0 0.2em 0;
+}
+#contianer,.section{
+	height: 100%;
+}
+#section1,
+#section2,
+#section3,
+#section4{
+	background: cover;
+	background-color: #00;
+	background-position:50% 50%;
+}
+#section1{
+	background-image: url(../img/1.jpg);
+}
+#section2{
+	background-image: url(../img/2.jpg);
+}
+#section3{
+	background-image: url(../img/3.jpg);
+}
+#section4{
+	background-image: url(../img/4.jpg);
+}
+#contianer{
+	width: 400%;
+}
+.section{
+	width: 25%;
+}
+.left{
+	float: left;
+}

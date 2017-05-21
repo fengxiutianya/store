@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>写行程</title>
+		<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/edit_travel.css" />
+		<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+
+	</head>
+
+	<body>
+		<div class="container">
+			<!--编写行程菜单栏-->
+			<div class="row">
+				<div class="col-md-12 my_nav">
+					<!--菜单栏-->
+					<ul>
+						<li id="title">标题</li>
+						<li id="content">内容</li>
+						<li id="submit">提交</li>
+					</ul>
+					<!--end-->
+				</div>
+			</div>
+			<!--行程名填写-->
+			<div class="row step1" style="display: none;">
+				<div class="col-md-12 step">
+					<input type="text" id="title_input" class="input" placeholder="取个美丽的行程名字吧" />
+					<span id="title_next" class="next title-next">下一步</span>
+				</div>
+			</div>
+			<!--结束-->
+			<!--行程信息输入框-->
+			<div class="row step2" style="display: none;">
+
+				<div class="col-md-12 step" style="margin-top: -5%;">
+					<div class="intro">
+						<div>
+							<select name="theme" class="input  f">
+								<option>主題</option>
+								<option value="saab">Saab</option>
+								<option value="fiat">Fiat</option>
+								<option value="audi">Audi</option>
+							</select>
+							<input type='file' id='file' name='file[]' style='display:none'>
+							<input class="input f" type='button' onclick='file.click()' value='上传主题图片' onclick='' />
+							<input type="text" name="start_time" id="start_name" class="input" placeholder="开始报名时间" readonly>
+							<input type="text" name="end_time" id="end_time" class="input" placeholder="截止报名时间" readonly>
+							<input type="text" name="publish_at" id="publish_at" class="input" placeholder="发布时间" readonly>
+							<input type="number" name="theme" class="input" placeholder="计划天数">
+							<input type="number" name="theme" class="input" placeholder="定金">
+							<select name="destination" class="input f">
+								<option>目的地</option>
+								<option value="saab">Saab</option>
+								<option value="fiat">Fiat</option>
+								<option value="audi">Audi</option>
+							</select>
+							<span id="form_next" class="form-next">下一步</span>
+						</div>
+						<div class="theme-img" style="display: none;">
+							<img src="" alt="" />
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+			<!--结束-->
+
+			<!--行程具体内容填写页面-->
+			<div class="row step3" style="display: none;">
+				<div class="col-md-12">
+					<!--内容-->
+					<ul class="menu">
+						<li class="active"><a href="#" data-role="intro">简介</a></li>
+						<script id="menu_tmpl" type="text/x-jquery-tmpl">
+							<li><a href="#" data-role=${num}>第${day}天</a></li>
+						</script>
+					</ul>
+					<!--end-->
+					<!--名字的代码-->
+					
+				</div>
+			</div>
+			<!--用于显示用户编辑页面-->
+			<div class="row step_day step3" style="display: none;">
+				<div class="col-md-12 day_content">
+
+				</div>
+			</div>
+		</div>
+		<!--行程简介输入框-->
+		<div id="intro" style="display: none;">
+			<textarea name="" rows="" cols="" style="width:100%;height: 400px;">
+
+			</textarea>
+		</div>
+		<!--结束-->
+		<!--行程内容输入框-->
+		<div id="add" style="display: none;">
+			
+			<div class="part add">
+				<button>添加新的行程</button>
+			</div>
+			<!--end-->
+		</div>
+		<!--内容-->
+		<div class="day_part" style="display: none;" data-time="">
+			<div class="header-time">
+				
+			</div>
+			<div class="part part_img">
+				<button class="upload_img" onclick='file.click()'>上传图片</button>
+			</div>
+			<div class="part part_text">
+			</div>
+		</div>
+		<!--行程内容输入结束-->
+		<div class="open-mask">
+
+		</div>
+		<div class="open-error">
+
+		</div>
+		<!--行程时间输入框-->
+		<div class="open-time open">
+
+			<div class="header">
+				<h3>请选择时间</h3>
+				<div class="close">×</div>
+			</div>
+			<div class="time">
+				<input type="text" id="day_time" class="input" value="" readonly>
+			</div>
+		</div>
+		<!--行程时间输入框结束-->
+		<!--浏览行程页面输入的图片-->
+		<div class="open_img">
+
+		</div>
+		<!--浏览行程输入的文本-->
+		<div class="open_text">
+
+		</div>
+
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript" src="bootstrab/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap-datetimepicker.js"></script>
+		<script type="text/javascript" src="js/bootstrap-datetimepicker.zh-CN.js"></script>
+		<script src="js/jquery.tmpl.js"></script>
+		<script src="js/edit_travel.js"></script>
+	</body>
+	<script>
+		$(function() {
+			//行程的名输入 
+			$("#title_next").click(function() {
+				var title = $.trim($("#title_input").val());
+				if (title.length != 0) {
+					$(".step1").css("display", "none");
+					$(".step2").css("display", "block");
+				} else {
+					alert("行程名不能为空");
+				}
+			});
+			$("#start_name").datetimepicker({
+				format: 'yyyy-mm-dd hh:ii',
+				autoclose: true,
+				todayBtn: true,
+				language: "zh-CN"
+			});
+			$("#end_time").datetimepicker({
+				format: 'yyyy-mm-dd hh:ii',
+				autoclose: true,
+				todayBtn: true,
+				language: "zh-CN"
+			});
+			$("#publish_at").datetimepicker({
+				format: 'yyyy-mm-dd hh:ii',
+				autoclose: true,
+				todayBtn: true,
+				language: "zh-CN"
+			});
+			$(".step3").each(function() {
+				$(this).css("display", "block");
+				//进行menu的设定
+			})
+			var names = [{
+				num: "1",
+				day: 1
+			}, {
+				num: "2",
+				day: 2
+			}, {
+				num: "3",
+				day: 3
+			}];
+			$("#menu_tmpl").tmpl(names).insertAfter(".menu li");
+			$(".step3").find(".day_content").empty().append($("#intro").clone().css("display", "block")[0]);
+			$("#form_next").click(function() {
+				$(".step2").css("display", "none");
+				$(".step3").each(function() {
+					$(this).css("display", "block");
+					//进行menu的设定
+				})
+				var names = [{
+					num: "1",
+					day: 1
+				}, {
+					num: "2",
+					day: 2
+				}, {
+					num: "3",
+					day: 3
+				}];
+				$("#menu_tmpl").tmpl(names).insertAfter(".menu li");
+				$(".step3").find(".day_content").empty().append($("#intro").clone().css("display", "block")[0]);
+			});
+			
+			$(".menu").find("a").each(function() {
+				$(this).parent().removeClass("active");
+				var role = $.trim($(this).attr("data-role"));
+				if (role == "intro") {
+					$(this).click(function() {
+						$(".menu").find("a").each(function(){
+							$(this).parent().removeClass("active");
+						})
+						$(this).parent().addClass("active")
+						//还有一步是从后台修改
+						$(".step3").find(".day_content").empty().append($("#intro").clone().css("display", "block")[0]);
+					});
+				} else {
+					$(this).click(function() {
+						$(".menu").find("a").each(function(){
+							$(this).parent().removeClass("active");
+						})
+						$(this).parent().addClass("active")
+						$(".step3").find(".day_content").empty().append($("#add").clone().css("display", "block")[0]);
+					});
+				}
+			});
+			$("a[data-role='intro']").parent().addClass("active");
+			//用于后来加上的元素事件绑定
+			//此处要拿到上一步骤旅行开始的时间
+			$(".day_content").delegate(".add", "click", function() {
+				
+				
+				var client =  $(window).height();
+				var height = $(document).outerHeight();
+				if(height > client){
+					
+				}else{
+					$(".open-time").css({
+					top:function(){
+						
+						return height+"px";
+					}
+				})
+				}
+				
+				$('.open-mask').fadeIn(100);
+				$(".open-time").slideDown(200);
+				
+				$("#day_time").datetimepicker({
+					startDate:"2015-05-22 00:00",
+					endDate:"2015-05-22 23:59",
+					format: 'hh:ii',
+					autoclose: true,
+					language: "zh-CN",
+					startView: 1
+				});
+				
+				$(".open-mask,.close").click(function() {
+					$('.open-mask').fadeOut(100);
+					$(".open-time").slideUp(200);
+					if($("#day_time").val()){
+							var test = $(".day_part").clone();
+							test.find(".header-time").text($("#day_time").val());
+							test.attr("data-time", $("#day_time").val());
+							test.css("display", "block");
+							$(".add").before(test[0])
+					}else{
+						alert("添加行程详情之前必须选择时间");
+					}
+				});
+				
+			});
+		});
+		
+		 //用于弹窗
+		function openDialog(item) {
+			$('.open-mask').fadeIn(100);
+			$(item).slideDown(200);
+			$(".open-mask").click(function() {
+				$('.open-mask').fadeOut(100);
+				$(item).slideUp(200);
+			});
+			$('.close').click(function() {
+				$('.open-mask').fadeOut(100);
+				$(item).slideUp(200);
+			});
+		}
+	</script>
+
+</html>

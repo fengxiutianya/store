@@ -1,0 +1,9 @@
+1. 文件夹的结构
+      assets     违背压缩的引入文件
+      build
+      dist       与assets文件夹的内容一样，是已经被压缩过的文件
+      docs
+      examples
+      html
+      mustache
+      

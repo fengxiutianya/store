@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>写游记</title>
+		<style type="text/css">
+			@charset "UTF-8";
+			/* CSS reset */
+			body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
+			code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td
+			{ margin: 0; padding: 0; }
+			fieldset,img{ border: 0; }
+			:focus{ outline: 0; }
+			address,caption,cite,code,dfn,em,strong,th,var,optgroup{ 
+			font-style: normal; font-weight: normal; }
+			h1,h2,h3,h4,h5,h6{ font-size: 100%; font-weight: normal;
+			font-family: "Microsoft YaHei"; }
+			abbr,acronym{ border: 0; font-variant: normal; }
+			code,kbd,samp,tt{ font-size: 100%; }
+			input,button,textarea,select{ *font-size: 100%; border:none;}
+			body{ background:#fff; color:#5e5e5e;}
+			ol,ul{ list-style: none; }
+			table{ border-collapse: collapse; border-spacing: 0; }
+			caption,th{ text-align: left; }
+			sup,sub{ font-size: 100%; vertical-align: baseline; }
+			::-webkit-scrollbar{
+				color:white;
+				background-color:white;
+				width:10px;
+				-webkit-transition: all .6s ease; 
+			}
+			::-webkit-scrollbar-thumb{
+			    border-radius:16px;
+				background:hotpink;
+				-webkit-transition: all .6s ease; 
+			}
+			::-webkit-scrollbar-thumb:hover{
+			background:  #FFFF00;
+			}
+			::-webkit-scrollbar-thumb:active{
+			background: #FFFF00;
+			}
+					
+			body
+			{
+				scrollbar-arrow-color:      tomato;
+				scrollbar-shadow-color:     #FFF;
+				scrollbar-3dlight-color:    #fff;
+				scrollbar-face-color:       #FFFF00;
+			}
+	    
+	    	a:focus
+	    	{
+	    		outline: none;
+	    	}
+	    
+	    	html,body{
+	    		outline: none;
+	    		height: 100%;
+	    		width: 100%;
+	    		background: bisque;
+	    		font-family: sans-serif;
+	    		padding: 0;
+	    		overflow: hidden;
+	    	}
+	    	
+	    	
+	    	.all
+	    	{
+	    		width: 100%;
+	    		position: relative;
+	    	}
+	    	.nav
+	    	{
+	    		width: 100%;
+	    		position: relative;
+	    		height: 150px;
+	    		top: 0;
+	    		background:  darkseagreen;
+	    	}
+	    	.nav ul
+	    	{
+	    		width: 1024px;
+	    		background:   greenyellow;
+	    		height: 80px;
+	    		margin: 0 auto;
+	    		padding: 0;
+	    		background: red;
+				padding-top: 70px;
+	    	}
+	    	.nav ul li
+	    	{
+	    		float: left;
+	    		width: 80px;
+	    		height: 80px;
+	    		background:  lime;
+	    		text-align: center;
+	    		line-height: 80px;
+	    		border-radius:100px ;
+	    		margin-right: 50px;
+	    		cursor: pointer;
+	    	}
+	    	.step
+	    	{
+	    		background: red;
+	    		position: absolute;
+	    		margin-left: 0;
+	    		width: 100%;
+	    		height: 440px;
+	    		float: left;
+	    		
+	    		-webkit-transition: left .6s  ease-in-out;
+				-moz-transition: left .6s  ease-in-out;
+				-ms-transition: left .6s  ease-in-out;
+				transition: left .6s  ease-in-out;
+				-o-transition: left .6s  ease-in-out;
+	    	}
+	    	#jiantou
+	    	{
+	    		border-radius: 0;
+	    		width: 30px;
+	    		height: 10px;
+	    		margin-top: 37.5px;
+	    		border-bottom-left-radius: 1.5px;
+	    		border-top-left-radius: 1.5px;
+	    	}
+	    	.sanjiaoxing {
+				position: relative;
+				display: inline-block;
+				width: 0;
+				height: 0;
+				overflow: hidden;
+				border: 14px solid transparent;
+				border-left-color: yellow;
+				left: 28px;
+				top: -27px;
+				opacity: 1;
+				z-index: 99;
+			}
+			#step_1
+			{
+				background: #fff;
+			}
+			#step_2
+			{
+				background:   #fff;
+				overflow: auto;
+			}
+			.step_2_content
+			{
+				overflow:  auto;
+				width: 1024px;
+				margin:  0 auto;
+				position: relative;
+				box-sizing: border-box;
+				
+			}
+			#step_3
+			{
+				background:  lightcoral;
+			}
+			#title_input
+			{
+				width: 400px;
+				height: 40px;
+				position: absolute;
+				left: 50%;
+				margin-left: -200px;
+				top: 20%;
+				font-size: 20px;
+				color: mediumturquoise;
+				font-family: "楷体";
+				text-indent: 1.5em;
+				border-radius: 50px;
+				border: 2px solid #40E0D0;
+				background:  #EEEEEE;
+				-webkit-transition: all .333s  ease;
+				-moz-transition: all .333s  ease-in-out;
+				-ms-transition: all .333s  ease-in-out;
+				transition: all .333s  ease-in-out;
+				-o-transition: all .333s  ease-in-out;
+			}
+			#title_input:focus
+			{
+				width: 460px;
+				margin-left: -230px;
+				background: #fff;
+			}
+			::-webkit-input-placeholder { color:   #40E0D0; }
+			input:-moz-placeholder { color:#40E0D0; }
+			#title_next
+			{
+				border-radius: 50px;
+				width: 200px;
+				height: 40px;
+				position: absolute;
+				display: inline-block;
+				left: 50%;
+				margin-left: -100px;
+				top: 40%;
+				font-size: 20px;
+				background:   mediumturquoise;
+				line-height: 40px;
+				cursor: pointer;
+				color: #fff;
+				font-family: "楷体";
+				text-align: center;
+				
+			}
+			#title_tip
+			{
+				position: absolute;
+				top: -20%;
+				left: 50%;
+				width: 260px;
+				height: 130px;
+				text-align: center;
+				line-height: 120px;
+				border-radius: 3px;
+				font-family: "微软雅黑";
+				font-size: 20px;
+				background: crimson;
+				color: floralwhite;
+				margin-left: -130px;
+				margin-top: -100px;
+				
+			}
+			.step_day
+			{
+				margin-top: 11px;
+				width: 1024px;
+				height: 340px;
+				box-sizing: border-box;
+				overflow: scroll;
+				padding-top: 30px;
+				border: 3px dotted  #5E5E5E;
+			}
+			#trip_img
+			{
+				width: 160px;
+				height: 150px;
+				float: left;
+				margin-top: 3px;
+				margin-left: 5px;
+			}
+			#trip_img img
+			{
+				width: 160px;
+				height: 150px;
+			}
+			#trip_img input
+			{
+				font-size: 13px;
+				color: #DC143C;
+				margin-bottom: 300px;
+			}
+			#describe
+			{
+				width: 157px;
+				height: 150px;
+				float: left;
+				margin-left: 5px;
+				border: 1px solid #40E0D0;
+				margin-top: 3px;
+			}
+		
+			#trip_day
+			{
+				width: 50px;
+				height: 26px;
+				margin-top: 10px;
+				margin-left: -7px;
+				background: #000;
+				position: absolute;
+				padding: 3px 7px;
+				text-align: center;
+				line-height: 26px;
+				color: #fff;
+				
+			}
+			#add_img
+			{
+				margin-left: 5px;
+				margin-top: 3px;
+				text-align: center;
+				line-height: 140px;
+			}
+			#add_img input
+			{
+				background: dodgerblue;
+				color: #fff;
+				padding: 4px 13px;
+				border-radius: 2px;
+				cursor: pointer;
+			}
+			#add_img input:hover
+			{
+				text-decoration: underline;
+			}
+			#template_img
+			{
+				margin-left: 0px;
+			}
+			#add_day
+			{
+				text-align: center;
+				line-height: 120px;
+			}
+			#add_day a
+			{
+				background: lightsalmon;
+				color: #fff;
+				padding: 3px 11px;
+				border-radius: 3px;
+				text-decoration: none;
+			}
+			#add_day a:hover
+			{
+				text-decoration: underline;
+			}
+			
+			.about_the_trip
+			{
+				position: absolute;
+				width: 1000px;
+				height: 500px;
+				background: #fff;
+				top: 50%;
+				left: 50%;
+				color: #333;
+				margin-left: -500px;
+				margin-top: -250px;
+				z-index: 888;
+				box-shadow: 0 1px 9px #666;
+				overflow: auto;
+				display: none;
+			}
+			.colse_about_btn
+			{
+				z-index: 889;
+				position: absolute;
+				top: 50%;
+				left:50% ;
+				width: 50px;
+				height: 50px;
+				margin-left: 475px;
+				margin-top: -275px;
+				text-align: center;
+				line-height: 50px;
+				background:  hotpink;
+				cursor: pointer;
+				color: #fff;
+				font-size: 50px;
+				border-radius: 100px;
+				border: 2px solid #fff;
+				display: none;
+			}
+			.about_the_trip
+			{
+				padding: 100px;
+				padding-top: 110px;
+				box-sizing: border-box;
+			}
+			.about_the_trip textarea
+			{
+				border-radius: 2px;
+				border: 1px solid #ccc;
+				resize: none;
+				font-size: 16px;
+				color:  teal;
+				font-family: "楷体";
+				background: rgba(255,255,255,0);
+			}
+			.about_the_trip textarea:focus
+			{
+				border:1px solid #ccc;
+				box-shadow: 0 0 6px #00B7EE;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="nav">
+			<ul>
+				<li id="title">标题</li>
+				<li id="jiantou"><span class="sanjiaoxing"></span></li>
+				<li id="content">内容</li>
+				<li id="jiantou"><span class="sanjiaoxing"></span></li>
+				<li id="fabu">发布</li>
+			</ul>
+		</div>
+		<div class="all">
+			<div id="step_1" class="step">
+				<input type="text" id="title_input" placeholder="来给你的游记取个美丽的名字吧" />
+				<span id="title_next">
+					下一步
+				</span>
+			</div>
+
+			<div id="step_2" class="step">
+
+				<div class="step_2_content">
+
+					<div id="trip_day">
+						第<span id="trip_day_num">1</span>天
+					</div>
+					<div class="step_day">
+						<div id="template_img_1">
+						</div>
+						<div id="add_img" class="trip_img">
+							<input type="button" class="add_image" value="添加第1天的心情" />
+						</div>
+					</div>
+
+				</div>
+
+				<div id="add_day">
+					<a class="add_day_a" href="javascript:void(0)">添加新的一天</a>
+				</div>
+			</div>
+
+			<div id="step_3" class="step">
+				333333
+			</div>
+		</div>
+
+		<div id="title_tip">
+			标题不能为空
+		</div>
+
+		<div class="about_the_trip">
+			<textarea class="trip_desc_text" cols="97" rows="15" placeholder='编辑好后，点击右上角的关闭按钮即可。'></textarea>
+		</div>
+		<div class="colse_about_btn">×</div>
+			<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script src="js/uploadPreview.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var window_height = document.body.clientHeight;
+			var window_width = document.body.clientWidth;
+			var all_height = (window_height )-150;
+			window.onresize = function(){
+				window_height = document.body.clientHeight;
+				window_width = document.body.clientWidth;
+				all_height = (window_height )-150;
+				$('.all').height(all_height);
+			}
+			
+			
+			
+			
+			var day = 1;
+			var update_img = 0;
+			
+			
+			$(document).on("click",".add_day_a",function(){
+			day++
+			$('.add_day_a').before("<div class='step_2_content' style='z-index: 99;'><div id='trip_day' style='z-index: 999;'>第"+day+"天</div><div class='step_day'><div id='template_img'></div><div id='add_img' class='trip_img'><input type='button'   class='add_image' value='添加第"+day+"天的心情' /></div></div></div>")	
+		
+			})
+			
+			
+			$(document).on("click",".add_image",function(){
+			if( $("#up_img"+update_img).val() !='')
+			{
+				update_img++;
+				$(this).before("<div id='trip_img' class='trip_img'><div id='imgdiv"+update_img+"' style='width: 160px;height:150px;position:relative;'><input type='file' style='background:  rgba(255,255,255,0);opacity:.6; width: 68px;height: 20px;' id='up_img"+update_img+"' /><img id='imgShow"+update_img+"' style='width: 160px;height: 150px; box-sizing:border-box;margin-left: 0px;margin-top:-385px;float:left;' /></div></div><div id='describe' class='trip_desc'><textarea placeholder='给这张图片来点描述吧！' id='text_"+update_img+"' class='add_desc' style='overflow-x:hidden;cursor:pointer;resize:none;padding: 3px;color:teal' cols='19' rows='9'></textarea></div>");
+				new uploadPreview({ UpBtn: "up_img"+update_img, DivShow: "imgdiv"+update_img, ImgShow: "imgShow"+update_img });
+			}
+			else
+			{
+				alert('图片和文字描述必须完整');
+				return;
+			}
+			
+			})
+			
+			
+			
+			/*
+			 
+			 <div id="trip_img">
+								<img src="img/1.jpg" alt="" />
+								</div>
+								<div id="describe" >
+									<textarea style="overflow-x:hidden;resize:none;padding: 3px;" cols="19" rows="9">
+									</textarea>
+								</div> 
+			 
+			 * */
+			
+			
+			
+			
+			
+			$('#step_1').css({
+				left:'0%'
+			})
+			$('#step_2').css({
+				left:'100%'
+			})
+			$('#step_3').css({
+				left:'200%'
+			})
+			
+			$('#title').hover(function(){
+				$('#step_1').css({
+					left:'0%'
+				})
+				$('#step_2').css({
+					left:'100%'
+				})
+				$('#step_3').css({
+					left:'200%'
+				})
+			})
+			
+			$('#content').hover(function(){
+				if($('#title_input').val() != '')
+				{
+					$('#step_1').css({
+					left:'-100%'
+					})
+					$('#step_2').css({
+						left:'0%'
+					})
+					$('#step_3').css({
+						left:'100%'
+					})
+				}else
+				return;
+				
+			})
+			$('#title_next').click(function(){
+				if($('#title_input').val() != '')
+				{
+					$('#step_1').css({
+					left:'-100%'
+					})
+					$('#step_2').css({
+						left:'0%'
+					})
+					$('#step_3').css({
+						left:'100%'
+					})
+				}
+				else
+				{
+					$('#title_tip').animate({'top':'50%','opacity':1},900,function(){
+						$('#title_tip').animate({'opacity':'0'},1995,function(){
+							$('#title_tip').animate({'top':'-20%'},0)
+						})
+					})
+				}
+				
+			})
+			
+			$('#fabu').hover(function(){
+				if($('#title_input').val() != '')
+				{
+				
+				$('#step_1').css({
+					left:'-200%'
+				})
+				$('#step_2').css({
+					left:'-100%'
+				})
+				$('#step_3').css({
+					left:'0%'
+				})
+				}
+				else
+				return;
+			})
+			
+			
+			/*  直接修改图片描述  */
+			var trip_text = {};
+			$(document).on('click','.add_desc',function(){
+				$('.trip_desc_text').val('')
+				$('.about_the_trip').css({'display':'block'})
+				$('.about_the_trip').animate({'display':'block','height':'500px','marginTop':'-250px'},111);
+				$('.colse_about_btn').css({'display':'block'})
+				trip_text = $(this);
+				
+				$(document).on('keyup','.trip_desc_text',function(){
+					
+					trip_text.val($('.trip_desc_text').val())
+				})
+				/* 点击确定按钮 */
+	//			$('.trip_desc_text_submit').click(function(){
+	//				alert(trip_text)
+	//				trip_text = $('.trip_desc_text').val();
+	//				
+	//			})
+			})
+			
+		
+			
+			
+				
+			$('.colse_about_btn').click(function(){
+				is_about = false;
+				$('.about_the_trip').animate({'height':'0px','marginTop':'-50px'},111,function(){
+					$('.about_the_trip').css('display','none')
+				});
+				
+				$('.colse_about_btn').css({'display':'none'})
+				
+			})
+		</script>
+	</body>
+
+</html>

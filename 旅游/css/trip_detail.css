@@ -1,0 +1,203 @@
+body{
+ background-color: rgb(241,241,241);
+}
+.main{
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+
+}
+.header{
+	width: 100%;
+	height: 300px;
+	padding: 0px;
+	background: url(../img/bg.jpg) no-repeat center center local; 
+  	-webkit-background-size: cover;
+ 	-moz-background-size: cover;
+ 	-o-background-size: cover;
+ 	background-size: cover;
+}
+.header .row{
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+}
+.header-main{
+	margin-top: 30px;
+}
+.header-line {
+    width: 80%;
+    height: 1px;
+    margin: 0 auto;
+    margin-top: 10px;
+    background-color: rgba(0,0,0,0.1);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1a000000',endColorstr='#1a000000');
+    font-size: 0;
+    line-height: 1px;
+}
+.header-title {
+    margin-top: 10px;
+    color: #fff;
+    font-size: 24px;
+}
+.header-date {
+    margin-top: 10px;
+    color: rgba(255,255,255,0.5);
+    font-size: 16px;
+}
+.header-func,.header-text{
+	width: 300px;
+    margin: 0 auto;
+    margin-top: 10px;
+    text-align: center;
+}
+.header-func span{
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	padding: 5px;
+	margin-left: 20px;
+	background-color: rgba(0,0,0,0.2);
+	border: 1px solid rgba(0,0,0,0.2);
+    border-radius:20px;		 /* Firefox浏览器 */	
+	-moz-border-radius:20px;		 /* webkit 内核浏览器 */	
+	-webkit-border-radius:20px;
+}
+
+.header-text span{
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	margin-left: 20px;
+	font-size: 10px;
+}
+
+
+.main-conent{
+	margin-top: 20px;
+	background-color: rgb(241,241,241);
+	position: relative;
+}
+.content-header p{
+	background-color: white;
+	padding: 20px 30px;
+	text-indent:2em;
+	padding-top: 20px;
+	padding-bottom: 30px;
+}
+.day{
+	z-index: 100;
+	background-color: rgb(241,241,241);
+	height: 50px;
+}
+.day h3{
+	margin: 0px;
+	padding: 0px;
+	display: inline-block;
+}
+
+.trip-content{
+	width: 100%;
+	z-index: -1;
+	position: relative;
+}
+.trip-content-item {
+    position: relative;
+    margin-top: 10px;
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+.trip-content-item img{
+	width: 100%;
+	height: 350px;
+}
+.paragraph {
+	background: white;
+	padding: 20px 40px;
+	line-height: 30px;
+	font-size: 14px;
+    text-indent:2em each-line;
+}
+.t-feed-func {
+    height: 30px;
+    border-top: 1px solid #ececec;
+}
+.t-feed-type {
+    float: left;
+    width: 25px;
+    height: 25px;
+    padding-top: 5px;
+    padding-left: 5px;
+    border-right: 1px solid #ececec;
+}
+
+.t-feed-time, .t-feed-like, .t-feed-cmt, .t-feed-share, .t-feed-del, .t-feed-edit {
+    display: block;
+    float: right;
+    height: 16px;
+    padding: 7px 10px;
+    text-align: center;
+    line-height: 16px;
+    cursor: pointer;
+}
+.bdshare-button-style0-16 {
+    zoom: 1;
+}
+.my-nav{
+	background-color: white;
+	height: 400px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+.my-nav li{
+	padding: 0px;
+	margin: 0px;
+}
+.my-nav li a{
+	color: black;
+}
+.menu-header{
+	display: block;
+    height: 40px;
+    margin-top: 2px;
+    padding: 0 8px;
+    background-color: #e9f8ff;
+    color: #333;
+    font-size: 14px;
+    line-height: 40px;
+}
+.menu-item{
+	display: block;
+	padding: 0 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+.my-active{
+	background-color: #50aeff;
+}
+@media (min-width:1200px)
+{
+	.bs-docs-sidebar.affix,.bs-docs-sidebar.affix-top,.bs-docs-sidebar.affix-bottom
+	{
+		width:263px;
+	}
+	.affix-date.affix,.affix-date.affix-top,.affix-date.affix-bottom
+	{
+		width:750px;
+	}
+}
+/*定位事件*/
+.affix-top {
+   position: relative;
+   margin-top:10px;
+}
+.affix {
+  top: 0px;
+  padding-top:10px;
+}
+.affix-bottom {
+  position: absolute;
+}

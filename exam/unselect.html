@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script src="js/avalon.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			.m{
+				margin-top: 10px;
+			}
+			.back{
+				display: block;
+				font-size: 40px;
+				margin: 20px;
+				
+			}
+			.back:focus{
+				outline: none;
+				text-decoration: none;
+			}
+		</style>
+	</head>
+	<body  ms-controller="course">
+		<a class="glyphicon glyphicon-circle-arrow-left back"></a>
+		<div class="row m">
+			<div class="col-md-1 col-md-offset-3">课程名</div>
+			<div class="col-md-1">任课老师</div>
+			<div class="col-md-1">开始时间</div>
+			<div class="col-md-1">结束时间</div>
+			<div class="col-md-1">操作</div>
+		</div>	
+		<div class="row m" ms-repeat="array">
+			<div class="col-md-1 col-md-offset-3">{{el.coursename}}</div>
+			<div class="col-md-1">任课老师</div>
+			<div class="col-md-1">开始时间</div>
+			<div class="col-md-1">结束时间</div>
+			<input type="checkbox" ms-duplex-string="lang"  ms-attr-value="{{$index}}">{{$index}}
+		</div>	
+	
+
+	</body>
+	<script type="text/javascript">
+	
+              var vm = avalon.define({
+                $id: "course",
+                sex: "man",
+                 array: [{
+	            	id:1,
+	            	coursename:"英语",
+	                teacher:"zhangke",
+	                startTime:1,
+	                endTime:2,
+	            }, {
+	                id:2,
+	            	coursename:"英语2",
+	                teacher:"zhangke2",
+	                startTime:1,
+	                endTime:2,
+	            }, {
+	                id:3,
+	            	coursename:"英语2",
+	                teacher:"zhangke2",
+	                startTime:1,
+	                endTime:2,
+	            }, {
+	                id:4,
+	            	coursename:"英语2",
+	                teacher:"zhangke2",
+	                startTime:1,
+	                endTime:2,
+	            }],
+                lang: [],
+                langtext: "javascript,ruby"
+            })
+          
+	        vm.$watch("lang.length", function() {
+	            vm.langtext = vm.lang.join(",")
+	        })
+
+
+	</script>

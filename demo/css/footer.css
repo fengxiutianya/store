@@ -1,0 +1,11 @@
+.footer{
+	height: 112px;
+	background: rgb(0,199,239);
+	color: white;
+	font-weight: 100;
+	
+	font-size: 30px;
+}
+.footer div{
+	margin-top:41px;
+}

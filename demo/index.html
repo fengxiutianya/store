@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>首页</title>
+		<link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/head.css" />
+		<link rel="stylesheet" type="text/css" href="css/footer.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	</head>
+
+	<body>
+		<div id="head" style="background: url(img/img1.jpg);background-size: cover;">
+			<div class="container">
+				<div class="head-content">
+					<ul class="nav navbar-nav text-center">
+						<li class="head-li active"><a href="#">首页</a></li>
+						<li class="head-li"><a href="#">行程</a></li>
+						<li class="head-li"><a href="#">游记</a></li>
+						<li class="head-li"><a href="#">个人中心</a></li>
+						<div class="login">
+							<a href="#" id="login">登录</a>| <a href="#register">注册</a>
+						</div>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+		<div class="font">
+			<img src="img/字体.png"/>
+		</div>
+		<div class="picture">
+			<img src="img/picture2.jpg"/>
+		</div>
+		<div class="font">
+			<img src="img/字体2.png"/>
+		</div>
+		<div class="font">
+			<img src="img/字体3.png"/>
+		</div>
+		<div class="container mycontainer">
+			<div class="row footer">
+
+				<div class="col-md-2 col-md-offset-1">
+					<a href="#">关于我们</a></div>
+
+				<div class="col-md-2 col-md-offset-2">
+					<a href="#">联系我们</a></div>
+
+				<div class="col-md-2 col-md-offset-3">
+					<a href="#">下载APP</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header text-center">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							&times;
+						</button>
+						<h3 class="modal-title text-danger">
+            				  登录
+           				 </h3>
+					</div>
+
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-md-4"></div>
+
+							<div class="col-md-6">
+
+								<div class="form-horizontal">
+									<div class="form-group">
+
+										<div class="col-sm-10">
+											<input type="text" class="form-control" id="phone" placeholder="用户名" value="">
+										</div>
+
+									</div>
+									<div class="form-group">
+										<div class="col-sm-10">
+											<input type="password" class="form-control" id="password" placeholder="密码" value="">
+
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-10">
+											<button type="submit" class="btn btn-primary btn-lg" style="width: 100%;" id="submit">登录</button>
+										</div>
+									</div>
+									<div class="form-group" style="display: none;" id="tooltip">
+										<div class="col-sm-10">
+											<p class="text-danger">用户名密码不能为空</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">
+							关闭
+						</button>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+		<!-- /.modal -->
+
+	</body>
+	<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+	<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$("#login").on("click", function() {
+				$('#myModal').modal('show')
+			});
+			 
+			$("#submit").on("click", function() {
+				var phone = $("#phone").val();
+				var password = $("#password").val();
+				($.trim(phone).length == 0 || $.trim(password).length == 0 )? $("#tooltip").css("display","block") :"";
+				
+				//$('#myModal').modal('hide');
+			});
+		});
+	</script>
+
+</html>

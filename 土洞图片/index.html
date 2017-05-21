@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>拖动图片</title>
+	</head>
+	<link rel="stylesheet" href="css/drag.css" />
+	<script src="js/sea.js"></script>
+	<script src="js/init.js"></script>
+	<body>
+		 <div id='wrap' ms-controller='drag_sort' class='ms-controller'>
+			<ul ms-mousemove='drag_move($event)'>
+				<li ms-repeat='photo_list'>
+					<div ms-mousedown='start_drag($event,$index,el)'>
+						<div class="dummy"></div>
+						<p ms-visible='target_index!=$index' ms-attr-id='wrap_img{{$index}}'><img ms-attr-src="el.src"><i></i></p>
+					</div>
+				</li>
+			</ul>
+		<div id='drag_proxy'></div>
+	</div>
+	</body>
+	<script>
+		seajs.use("drag",function(drag){});
+	</script>
+</html>

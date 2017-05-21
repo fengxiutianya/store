@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    	<title>我的订单</title>
+		<!-- 新 Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="../source/bootstrap/css/bootstrap.min.css">
+			
+	</head>
+	<style>
+		body{
+			background-color:rgb(216,220,221) ;
+		}
+		.header-btn{
+			width: 100%;
+			height: 50px;
+			padding-top:2px ;
+			background-color: rgb(127,177,236);
+			border-radius: 0;
+			color: white;
+			font-size: 23px;
+			font-weight:bold;
+		}
+		.header-btn .glyphicon{
+			margin-left: -10px;
+			float: left;
+			font-size: 30px;
+		}
+		.row{
+			background-color: white;
+		}
+		.box{
+			height: 40px;
+			line-height: 40px;
+			padding: 0;
+			background: white;
+			font-weight: bold;
+		}
+		.box-header-border{
+			border-bottom: solid rgb(127,177,236) 3px;
+		}
+		.space{
+			height: 20px;
+			width: 100%;
+		}
+		.order{
+			background: white;
+			padding: 15px;
+			font-weight:bold;
+			font-size: 20px;
+			margin-bottom: 20px;
+			
+		}
+		.icon-text{
+			border: slid 1px rgb(127,177,236);
+			height: 20px;
+			width: 20px;
+			color: white;
+			font-size: 10px;
+			border-radius: 50%;
+			margin-top:4px;
+			padding: 2px 3px;
+		    background-color: rgb(127,177,236);
+		}
+	    .order-addr{
+	    	color: rgb(216,220,221);
+	    	font-size:12px;
+	    	margin-bottom: 5px;
+	     }
+	     .order-time{
+	     	display: table;
+	     	padding: 0 3px;
+	     	background-color:rgb(127,177,236) ;
+	     	color: white;
+	     	font-size: 12px;
+	     	border-radius: 3px;
+	     	margin-top:5px;
+	     }
+	     hr{
+	     	margin-top: 20px;
+    		margin-bottom: 20px;
+   			border: 0;
+   			border-top: 3px solid #eee;
+	     }
+	     .evaluate{
+	     	color: rgb(127,177,236);
+	     }
+	</style>
+	<body>
+		<button type="button" class="btn btn-default  header-btn">
+			 <span class="glyphicon glyphicon-menu-left"></span>
+			  我的订单
+		</button>
+		<div class="container-fluid">
+			<div class="row box">
+  				 <div class="col-xs-4">全部</div>
+  				 <div class="col-xs-4">待支付</div>
+  				 <div class="col-xs-4 box-header-border">
+  				 	<a href="#" class="active">已取件</a>
+  				 </div>
+  			</div>
+  			<div class="clearfix"></div>
+  			<div class="space"></div>
+  			<div class="row order">
+  				   		<div class="row">
+  				   			<div class="col-xs-1">
+  				   				<div class="icon-text">买</div>
+  				   			</div>
+  				   			<div class="col-xs-11">
+  				   				辣子鸡面
+  				   			</div>
+  				   			<div class="col-xs-11 col-xs-offset-1 order-addr">
+  				   				长乐北一街23号
+  				   			</div>
+  				   		</div>
+	  					<div class="row">
+	  						<div class="col-xs-1">
+  				   				<div class="icon-text">卖</div>
+  				   			</div>
+  				   			<div class="col-xs-11">
+  				   				  成都信息工程学院六教 (航空港校区)
+  				   			</div>
+  				   			<div class="col-xs-6 col-xs-offset-1">
+  				   				<div class="order-time">完成时用时30分钟</div>
+  				   			</div>
+	  					</div>
+	  					<hr />
+	  					<div class="row">
+	  						<div class="col-xs-4">我的评价:</div>
+	  						<div class="col-xs-8 evaluate">满意</div>
+	  					</div>
+	  		</div>
+			<div class="row order">
+  				   		<div class="row">
+  				   			<div class="col-xs-1">
+  				   				<div class="icon-text">买</div>
+  				   			</div>
+  				   			<div class="col-xs-11">
+  				   				辣子鸡面
+  				   			</div>
+  				   			<div class="col-xs-11 col-xs-offset-1 order-addr">
+  				   				长乐北一街23号
+  				   			</div>
+  				   		</div>
+	  					<div class="row">
+	  						<div class="col-xs-1">
+  				   				<div class="icon-text">卖</div>
+  				   			</div>
+  				   			<div class="col-xs-11">
+  				   				  成都信息工程学院六教 (航空港校区)
+  				   			</div>
+  				   			<div class="col-xs-6 col-xs-offset-1">
+  				   				<div class="order-time">完成时用时30分钟</div>
+  				   			</div>
+	  					</div>
+	  					<hr />
+	  					<div class="row">
+	  						<div class="col-xs-4">我的评价:</div>
+	  						<div class="col-xs-8 evaluate">满意</div>
+	  					</div>
+	  		</div>
+			<div class="row order">
+  				   		<div class="row">
+  				   			<div class="col-xs-1">
+  				   				<div class="icon-text">买</div>
+  				   			</div>
+  				   			<div class="col-xs-11">
+  				   				辣子鸡面
+  				   			</div>
+  				   			<div class="col-xs-11 col-xs-offset-1 order-addr">
+  				   				长乐北一街23号
+  				   			</div>
+  				   		</div>
+	  					<div class="row">
+	  						<div class="col-xs-1">
+  				   				<div class="icon-text">卖</div>
+  				   			</div>
+  				   			<div class="col-xs-11">
+  				   				  成都信息工程学院六教 (航空港校区)
+  				   			</div>
+  				   			<div class="col-xs-6 col-xs-offset-1">
+  				   				<div class="order-time">完成时用时30分钟</div>
+  				   			</div>
+	  					</div>
+	  					<hr />
+	  					<div class="row">
+	  						<div class="col-xs-4">我的评价:</div>
+	  						<div class="col-xs-8 evaluate">满意</div>
+	  					</div>
+	  		</div>
+		</div>
+	</body>
+	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+	<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</html>

@@ -1,0 +1,31 @@
+.header{
+	font-size: 20px;
+}
+.header a{
+	display: inline_block;
+	color: black;
+	text-decoration-line：none;
+}
+.main-nav hr{
+	display: block;
+	padding: 0px;
+	margin: 0px;
+	border:1px solid rgb(185,180,174);
+}
+.info {
+	margin-bottom: 20px;
+}
+.info img{
+	width: 100%;
+	height: 300px;
+}
+.info > a{
+	width: 100%;
+	position: relative;
+}
+.title{
+    position: absolute;
+    color: white;
+	left: 20%;
+	top:100%;
+}

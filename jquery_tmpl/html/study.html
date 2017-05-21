@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	
+	<body>
+		<div id="div_demo">
+		</div>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="../js/jquery.tmpl.js"></script>
+	</body>
+<script id="demo" type="text/x-jquery-tmpl">
+	    <div style="margin-bottom:10px;">
+	    　　<span>${ID}</span>
+	    　　<span style="margin-left:10px;">${Name}</span>
+	    　　<span style="margin-left:10px;">${Number(Num)+1}</span>
+	    　　<span style="margin-left:10px;">${Status}</span>
+	    </div>
+</script>	
+<script type="text/javascript">
+	var users = [{ ID: 'think8848', Name: 'Joseph Chan', Num: '1', Status: 1 }, { ID: 'aCloud', Name: 'Mary Cheung', Num: '2'}];
+　　	$("#demo").tmpl(users).appendTo('#div_demo');
+</script>
+
+</html>

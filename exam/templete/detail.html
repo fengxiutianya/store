@@ -1,0 +1,16 @@
+
+
+<section ms-controller="detail" class="detail ms-controller">
+  			哟哟哟，这里是详情页面，{{username.name}}你好
+</section>
+
+
+<script>
+ define(["avalon","jquery"],function(require, exports, module) {
+    avalon.define({
+      $id: "detail",
+      username: conf.username
+    });
+    avalon.scan();
+  })
+</script>

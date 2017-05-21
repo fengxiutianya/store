@@ -1,0 +1,96 @@
+html.body{
+	width: 100%;;
+}
+.header{
+	width: 100%;
+	height: 500px;
+	background-image: url(../img/ba.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow: hidden;
+}
+li{
+	margin: 0;
+    padding: 0;
+}
+a{
+	display: block;
+	color: #333;
+    text-decoration: none;
+}
+.main{
+	margin-top: 40px;
+	width: 100%;
+}
+.menu{
+	list-style: none;
+    background: #f5f5f5;
+    overflow: hidden;
+    padding: 0px;
+}
+.menu li{
+	float: left;
+    width: 20%;
+    font-size: 18px; 
+    line-height: 3.0555555556;
+    text-align: center;
+}
+.menu li{
+	display: list-item;
+}
+
+.menu li.active {
+    background: #0cf;
+    color: #fff;
+}
+.menu li a:hover{
+	background: #0cf;
+    color: #fff;
+}
+#menu-item{
+	margin-top: 20px;
+}
+#menu-item a{
+	width: 100%;
+	height: 100%;
+}
+#menu-item .item{
+	width: 100%;
+	height: 100%;
+    position: relative;
+    color: #fff;
+    overflow: hidden;
+}
+#menu-item .item img{
+	width: 100%;
+	min-height: 200px;
+	max-height: 300px;
+}
+
+#menu-item .item .text-wrapper{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: -45.5px auto ;
+    font-size: 10px;
+    z-index: 1;
+    text-align: center;
+}
+.place{
+	font-size: 4em;
+    padding: 0 0 .375em;
+    display: inline-block;
+    text-shadow: 0 0 2px #000;
+}
+.des{
+	font-size: 2em;
+    padding: 1em 0 0;
+    display: inline-block;
+    width: 35%;
+    border-top: 1px solid rgba(255,255,255,.7);
+    text-shadow: 0 0 2px #000;
+}
+#menu-item .col-md-5{
+	margin-top: 20px;
+}

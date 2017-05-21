@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>个人中心</title>
+		<link rel="stylesheet" href="bootstrab/css/bootstrap.css">
+		<link rel="stylesheet" href="css/person/iconfont.css">
+		<link rel="stylesheet" type="text/css" href="css/person.css" />
+
+	</head>
+
+	<body>
+		<div class="header" style="background-image:url(img/bg.jpg) ;">
+			<div class="person-header">
+				<img src="img/person.jpg" alt="..." class="img-circle">
+			</div>
+		</div>
+		<div class="container main">
+			<div class="row menu">
+				<div class="col-md-12">
+					<ul class="menu-img">
+						<li class="line"></li>
+						<li class="iconfont icon" data-role="my">&#xe645;</li>
+						<li class="line"></li>
+						<li class="line"></li>
+						<li class="iconfont icon" data-role="travel">&#xe645;</li>
+						<li class="line"></li>
+						<li class="line"></li>
+						<li class="iconfont icon" data-role="article">&#xe645;</li>
+						<li class="line"></li>
+					</ul>
+				</div>
+				<div class="col-md-12">
+					<ul class="menu-text">
+						<li data-role="my">我的资料</li>
+						<li data-role="travel">行程</li>
+						<li data-role="article">游记</li>
+					</ul>
+				</div>
+			</div>
+			<div class="row content">
+				<div class="col-md-2 col-md-offset-1">
+					<div class="content-menu">
+						<button type="button" class="btn btn-info" style="display: none;">个人资料</button>
+					</div>
+				</div>
+				<div class="col-md-9">
+					<div class="main-content">
+						<div id="my_info" class="p_info" style="display: none;">
+							<div class="input-group">
+								<span class="input-group-addon iconfont">&#xe604;</span>
+								<input type="text" name="username" class="form-control" placeholder="用户名">
+							</div>
+							<div class="input-group">
+								<span class="input-group-addon iconfont">&#xe616;</span>
+								<input type="text" name="qq" class="form-control" placeholder="qq">
+							</div>
+							<div class="input-group">
+								<span class="input-group-addon iconfont">&#x34ab;</span>
+								<input type="text" name="phone" class="form-control" placeholder="手机号码">
+							</div>
+							<div class="input-group">
+								<span class="input-group-addon iconfont">&#xe7f0;</span>
+								<input type="text" name="weixin" class="form-control" placeholder="微信">
+							</div>
+							<div class="input-group">
+								<span class="input-group-addon iconfont">&#xe618;</span>
+								<input type="text" name="email" class="form-control" placeholder="E-mail">
+							</div>
+							<div class="input-group">
+								<span class="input-group-addon iconfont">&#xe60c;</span>
+								<input type="text" class="form-control" placeholder="微博">
+							</div>
+
+							<button class="btn btn-success" type="submit">提交修改</button>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+
+		<!--格式化显示-->
+		<div id="my_menu" style="display: none;">
+			<button type="button" class="btn btn-info">个人资料</button>
+		</div>
+		<div id="my_info" class="p_info" style="display: none;">
+			<div class="input-group">
+				<span class="input-group-addon iconfont">&#xe604;</span>
+				<input type="text" name="username" class="form-control" placeholder="用户名">
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon iconfont">&#xe616;</span>
+				<input type="text" name="qq" class="form-control" placeholder="qq">
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon iconfont">&#x34ab;</span>
+				<input type="text" name="phone" class="form-control" placeholder="手机号码">
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon iconfont">&#xe7f0;</span>
+				<input type="text" name="weixin" class="form-control" placeholder="微信">
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon iconfont">&#xe618;</span>
+				<input type="text" name="email" class="form-control" placeholder="E-mail">
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon iconfont">&#xe60c;</span>
+				<input type="text" class="form-control" placeholder="微博">
+			</div>
+
+			<button class="btn btn-success" type="submit">提交修改</button>
+		</div>
+
+		<div id="travel-menu" style="display: none;">
+			<button class="btn btn-info" id="ch_travel">待审核的行程</button>
+			<button class="btn btn-info" id="my_travel">我的行程</button>
+			<button class="btn btn-info" id="fou_travel">关注的行程</button>
+			<a type="button" class="btn btn-info" href="#">写行程</a>
+		</div>
+
+		<div id="atrticle-menu" style="display: none;">
+			<button class="btn btn-info" id="my_article">我的游记</button>
+			<button class="btn btn-info" id="fou_article">关注的游记</button>
+			<a type="button" class="btn btn-info" href="#">写游记</a>
+		</div>
+
+		<script id="template" type="text/x-jquery-tmpl">
+			<div class="travel-item">
+				<a href="#">
+					<img src=${img} />
+					<div class="travel-text">
+						<h1>行程名</h1>
+						<h3>时间</h3>
+					</div>
+				</a>
+			</div>
+		</script>
+		<div class="check_travel" style="display: none;">
+			<div class="travel_name">
+				行程名
+			</div>
+			<div class="travel_time">
+				<div class="ch_item">
+					<ul>
+						<li class="iconfont">&#xe616;</li>
+						<li> 提交日期
+							<br/> ${year}
+							<br/> 10:20:21
+							<br/>
+						</li>
+					</ul>
+				</div>
+				<div class="straight">
+					<hr />
+				</div>
+
+				<div class="ch_item">
+					<ul>
+						<li class="iconfont">&#xe616;</li>
+						<li> 审核中
+							<br/> 2015.12.11
+							<br/> 11:20:21
+							<br/>
+						</li>
+					</ul>
+				</div>
+				<div class="straight">
+					<hr />
+				</div>
+				<div class="ch_item">
+					<ul>
+						<li class="iconfont">&#xe616;</li>
+						<li> 审核完成
+							<br/> 2015.12.11
+							<br/> 11:20:21
+							<br/>
+						</li>
+					</ul>
+				</div>
+			</div>
+		
+
+			<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+			<script src="js/jquery.tmpl.js"></script>
+			<script type="text/javascript">
+				$(function() {
+					$(".menu").find("li[data-role]").each(function() {
+						var role = $.trim($(this).attr("data-role"));
+						if (role == "my") {
+							$(this).click(function() {
+								$(".main-content").empty();
+								$(".content-menu").empty();
+								//需要到后台取出数据
+								$(".main-content").empty().append($("#my_info").clone().css("display", "block")[0]);
+								$(".content-menu").empty().append($("#my_menu").clone().css("display", "block")[0]);
+							});
+						} else if (role == "travel") {
+							$(this).click(function() {
+								$(".main-content").empty();
+								$(".content-menu").empty();
+								//需要到后台取出数据,取出头俩条自己的行程
+								var menu = [{
+									img: "img/1.jpg"
+								}]
+								$(".main-content").empty().append($("#template").tmpl(menu).clone().css("display", "block")[0]);
+								$(".content-menu").empty().append($("#travel-menu").clone().css("display", "block")[0]);
+							});
+						} else if (role == "article") {
+							$(this).click(function() {
+								$(".main-content").empty();
+								$(".content-menu").empty();
+								//需要到后台取出数据,取出头俩条自己的行程
+								var menu = [{
+									img: "img/1.jpg"
+								}]
+								$(".main-content").empty().append($("#template").tmpl(menu).clone().css("display", "block")[0]);
+								$(".content-menu").empty().append($("#atrticle-menu").clone().css("display", "block")[0]);
+							});
+						}
+					});
+					//行程审核点击时，需要到后台取出数据
+					$(".content-menu").delegate("#ch_travel", "click", function() {
+						$(".main-content").empty();
+						$(".main-content").empty().append($(".check_travel").clone().css("display", "block")[0]);
+					});
+					//关注行程点击时，需要到后台取出数据取出关注的行程，支取俩条
+					$(".content-menu").delegate("#fou_travel", "click", function() {
+						$(".main-content").empty();
+						var menu = [{
+							img: "img/bg.jpg"
+						}]
+						$(".main-content").empty().append($("#template").tmpl(menu).clone().css("display", "block")[0]);
+					});
+					//我的行程点击时，取俩条
+					$(".content-menu").delegate("#my_travel", "click", function() {
+						$(".main-content").empty();
+						var menu = [{
+							img: "img/2.jpg"
+						}]
+						$(".main-content").empty().append($("#template").tmpl(menu).clone().css("display", "block")[0]);
+					});
+					//关注游记点击时，支取俩条
+					$(".content-menu").delegate("#fou_article", "click", function() {
+						$(".main-content").empty();
+						var menu = [{
+							img: "img/bg.jpg"
+						}]
+						$(".main-content").empty().append($("#template").tmpl(menu).clone().css("display", "block")[0]);
+					});
+					//我的游记点击时，支取俩条
+					$(".content-menu").delegate("#my_article", "click", function() {
+						$(".main-content").empty();
+						var menu = [{
+							img: "img/2.jpg"
+						}]
+						$(".main-content").empty().append($("#template").tmpl(menu).clone().css("display", "block")[0]);
+					});
+				});
+			</script>
+	</body>
+
+</html>

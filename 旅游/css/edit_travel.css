@@ -1,0 +1,277 @@
+html,body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	
+}
+input,a,select,button:focus {
+	outline: none;
+}
+ul,
+li {
+	padding: 0px;
+	margin: 0px;
+}
+.row {
+	margin: 0px;
+	padding: 0px;
+}
+.my_nav {
+	width: 100%;
+	height: 150px;
+	line-height: 150px;
+	background: darkseagreen;
+	text-align: center;
+}
+.my_nav ul li {
+	display: inline-block;
+	width: 80px;
+	height: 80px;
+	line-height: 80px;
+	background: lime;
+	border-radius: 100px;
+	margin-right: 50px;
+	cursor: pointer;
+}
+.step {
+	padding-top: 10%;
+}
+.input {
+	display: block;
+	width: 300px;
+	height: 40px;
+	font-size: 20px;
+	color: mediumturquoise;
+	font-family: "楷体";
+	text-indent: 1.5em;
+	border-radius: 50px;
+	border: 2px solid #40E0D0;
+	background: #EEEEEE;
+	margin: auto auto;
+}
+.f{
+	color: rgb(181,175,171);
+	text-align: left;
+}
+
+.title-next {
+	display: block;
+	margin: 20px auto;
+	width: 150px;
+	height: 40px;
+	font-size: 20px;
+	border-radius: 50px;
+	line-height: 40px;
+	background: mediumturquoise;
+	cursor: pointer;
+	color: #fff;
+	font-family: "楷体";
+	text-align: center;
+	
+}
+.intro {
+	width: 100%;
+}
+.intro input {
+	margin: 10px auto;
+}
+.form-next {
+	display: block;
+	width: 150px;
+	height: 40px;
+	font-size: 20px;
+	border-radius: 50px;
+	line-height: 40px;
+	background: mediumturquoise;
+	cursor: pointer;
+	color: #fff;
+	font-family: "楷体";
+	text-align: center;
+	margin: 10px auto;
+}
+.intro-form {
+	float: left;
+	border: 1px solid red;
+	width: 50%;
+}
+.theme-img {
+	width: 50%;
+	height: 40px;
+	float: left;
+	width: 300px;
+	border: 1px solid blue;
+}
+li {
+	margin: 0;
+	padding: 0;
+}
+
+.menu{
+	margin-top: 10px;
+}
+.menu li {
+	float: left;
+	width: 10%;
+	min-width: 60px;
+	font-size: 18px;
+	line-height: 3.0555555556;
+	text-align: center;
+	border-radius:20px ;
+}
+.menu li {
+	list-style: none;
+}
+.menu li.active {
+	background: #0cf;
+	color: #fff;
+}
+.menu li a{
+	display: block;
+	color: #333;
+	text-decoration: none;
+}
+.menu li a:hover {
+	background: #0cf;
+	color: #fff;
+	border-radius:20px ;
+}
+
+.day_content {
+	position: relative;
+	width: 100%;
+	padding: 10px;
+
+}
+.day_part {
+	float: left;
+	position: relative;
+	 margin: 20px;
+}
+.header-time{
+	height: 30px;
+	line-height: 30px;
+	font-size: 20px;
+	text-align: center;
+}
+
+.part {
+	position: relative;
+	float: left;
+	margin: 2px 2px;
+	width: 200px;
+	height: 200px;
+	
+}
+.upload_img{
+	display: block;
+	width: 150px;
+	height: 40px;
+	font-size: 20px;
+	color: black;
+	font-family: "楷体";
+    margin: 80px auto;
+}
+.part img{
+	margin: 10px;
+	height: 180px;
+	width: 180px;
+	max-height: 200px;
+	max-width: 200px;
+}
+.part_text{
+	border: solid 1px rgb(192,192,192);
+	padding: 20px;
+	overflow-wrap:break-word;
+	overflow-y: hidden;
+}
+.part_img{
+	border: solid 1px rgb(64,224,208);
+}
+#add{
+   margin-left: 10%;
+}
+
+.add{
+	border: none;
+	text-align: center;
+	padding-top:80px;
+}
+
+.add button{
+	display: block;
+	width: 150px;
+	height: 40px;
+	font-size: 20px;
+	border-radius: 50px;
+	background: mediumturquoise;
+	cursor: pointer;
+	color: black;
+	font-family: "楷体";
+    margin:auto auto;
+}
+.open-mask,.open-time
+.open_img,.open_text,.open-error{
+	display: none;
+}
+.open-mask{
+	z-index: 400;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: 0.4;
+	filter: alpha(opacity=40);
+	display: none
+}
+.open{
+	z-index: 1000;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 660px;
+	height: 360px;
+	margin: -180px 0 0 -330px;
+	border-radius: 5px;
+	border: solid 2px #666;
+	background-color: #fff;
+	box-shadow: 0 0 10px #666;
+	display: none;
+}
+.header {
+	padding: 15px;
+	background-color: #f6f6f6;
+	border-top: 1px solid #ddd;
+	border-radius: 0 0 5px 5px;
+	color: black;
+	text-align: center;
+}
+.close {
+	position: absolute;
+	z-index:9999;
+	top:0px;
+	right:0px;
+	width: 40px;
+	height: 40px;
+	margin-top:-20px;
+	margin-right: -20px;
+	color: #fff;
+	background: red;
+	text-decoration: none;
+	text-align: center;
+	font-size:50px;
+	border-radius:100px ;
+	filter: alpha(opacity=50);
+    opacity: .5;
+}
+.close:focus, .close:hover {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    filter: alpha(opacity=50);
+    opacity: .5;
+}
+.open-time .time{
+	text-align: center;
+}
